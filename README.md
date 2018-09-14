@@ -23,4 +23,7 @@
  - isValid - Determine if current step is valid before moving to the next one.
  - disabled - Will disable the step (will not be shown in the wizard)
 
+## To run test, run:
+    ng test
+
 --End--
