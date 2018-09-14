@@ -1,20 +1,143 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!
-  </h1>
-  <img width="300" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCAyNTAgMjUwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNTAgMjUwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojREQwMDMxO30NCgkuc3Qxe2ZpbGw6I0MzMDAyRjt9DQoJLnN0MntmaWxsOiNGRkZGRkY7fQ0KPC9zdHlsZT4NCjxnPg0KCTxwb2x5Z29uIGNsYXNzPSJzdDAiIHBvaW50cz0iMTI1LDMwIDEyNSwzMCAxMjUsMzAgMzEuOSw2My4yIDQ2LjEsMTg2LjMgMTI1LDIzMCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAJIi8+DQoJPHBvbHlnb24gY2xhc3M9InN0MSIgcG9pbnRzPSIxMjUsMzAgMTI1LDUyLjIgMTI1LDUyLjEgMTI1LDE1My40IDEyNSwxNTMuNCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAxMjUsMzAgCSIvPg0KCTxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik0xMjUsNTIuMUw2Ni44LDE4Mi42aDBoMjEuN2gwbDExLjctMjkuMmg0OS40bDExLjcsMjkuMmgwaDIxLjdoMEwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMQ0KCQlMMTI1LDUyLjF6IE0xNDIsMTM1LjRIMTA4bDE3LTQwLjlMMTQyLDEzNS40eiIvPg0KPC9nPg0KPC9zdmc+DQo=">
+<br>
+<app-stepping (beforeStep)="beforeStep($event)" (afterStep)="afterStep($event)" (completed)="onComplete($evevnt)">
+  <app-step title="The Bun" [isValid]="!!bunRadios">
+    <form class="pure-form">
+      <label for="option-one" class="pure-radio">
+          <input id="option-one" type="radio" name="bunRadios" value="Kaiser Roll" [(ngModel)]="bunRadios">
+          Kaiser Roll
+      </label>
+      <label for="option-two" class="pure-radio">
+          <input id="option-two" type="radio" name="bunRadios" value="Pretzel Roll" [(ngModel)]="bunRadios">
+          Pretzel Roll
+      </label>
+      <label for="option-three" class="pure-radio">
+          <input id="option-three" type="radio" name="bunRadios" value="Sesame Seed Bun" [(ngModel)]="bunRadios">
+          Sesame Seed Bun
+      </label>
+    </form>
+  </app-step>
+  <app-step title="Dressing" [isValid]="!!dressing">
+      <form class="pure-form">
+        <label for="option-dressing-one" class="pure-radio">
+            <input id="option-dressing-one" type="radio" name="bunRadios" value="Classic burger sauce" [(ngModel)]="dressing">
+            Classic burger sauce
+        </label>
+        <label for="option-dressing-two" class="pure-radio">
+            <input id="option-dressing-two" type="radio" name="bunRadios" value="Jalapeno cheese sauce" [(ngModel)]="dressing">
+            Jalapeno cheese sauce
+        </label>
+        <label for="option-dressing-three" class="pure-radio">
+            <input id="option-dressing-three" type="radio" name="bunRadios" value="Chipotle feta" [(ngModel)]="dressing">
+            Chipotle feta
+        </label>
+      </form>
+  </app-step>
+  <app-step title="Veggies and Fruits" [isValid]="hasSelectedVeggies">
+    <form class="pure-form">
+      <label for="option-veg-tomatoes" class="pure-checkbox">
+          <input id="option-veg-tomatoes" type="checkbox" name="optionsCheckboxex" [(ngModel)]="veggies.tomatoes">
+          tomatoes
+      </label>
+      <label for="option-veg-mushrooms" class="pure-checkbox">
+          <input id="option-veg-mushrooms" type="checkbox" name="optionsCheckboxex" [(ngModel)]="veggies.mushrooms">
+          mushrooms
+      </label>
+      <label for="option-veg-cucumbers" class="pure-checkbox">
+          <input id="option-veg-cucumbers" type="checkbox" name="optionsCheckboxex" [(ngModel)]="veggies.cucumbers">
+          cucumbers
+      </label>
+      <label for="option-two" class="pure-checkbox">
+          <input id="option-two" type="checkbox" name="optionsCheckboxex" [(ngModel)]="veggies.leaflettuce">
+          leaflettuce
+      </label>
+      <label for="option-veg-spinach" class="pure-checkbox">
+          <input id="option-veg-spinach" type="checkbox" name="optionsCheckboxex" [(ngModel)]="veggies.spinach">
+          spinach
+      </label>
+      <label for="option-veg-kale" class="pure-checkbox">
+          <input id="option-veg-kale" type="checkbox" name="optionsCheckboxex" [(ngModel)]="veggies.kale">
+          kale
+      </label>
+      <label for="option-veg-chard" class="pure-checkbox">
+          <input id="option-veg-chard" type="checkbox" name="optionsCheckboxex" [(ngModel)]="veggies.chard">
+          chard
+      </label>
+      <label for="option-veg-arugula" class="pure-checkbox">
+          <input id="option-veg-arugula" type="checkbox" name="optionsCheckboxex" [(ngModel)]="veggies.arugula">
+          arugula
+      </label>
+      <label for="option-veg-peppers" class="pure-checkbox">
+          <input id="option-veg-peppers" type="checkbox" name="optionsCheckboxex" [(ngModel)]="veggies.peppers">
+          peppers
+      </label>
+      <label for="option-veg-onions" class="pure-checbox">
+          <input id="option-veg-onions" type="checkbox" name="optionsCheckboxex" [(ngModel)]="veggies.onions">
+          onions
+      </label>
+    </form> 
+  </app-step>
+  <app-step title="Cheese" [isValid]="hasSelectedCheeses">
+    <form class="pure-form">
+      <label for="option-cheese1" class="pure-checkbox">
+          <input id="option-cheese1" type="checkbox" name="optionsCheckboxes" [(ngModel)]="cheese.cheddar">
+          cheddar
+      </label>
+      <label for="option-cheese2" class="pure-checkbox">
+          <input id="option-cheese2" type="checkbox" name="optionsCheckboxes" [(ngModel)]="cheese.bluecheese">
+          bluecheese
+      </label>
+      <label for="option-cheese3" class="pure-checkbox">
+          <input id="option-cheese3" type="checkbox" name="optionsCheckboxes" [(ngModel)]="cheese.gouda">
+          gouda
+      </label>
+      <label for="option-cheese4" class="pure-checkbox">
+          <input id="option-cheese4" type="checkbox" name="optionsCheckboxes" [(ngModel)]="cheese.goatcheese">
+          goatcheese
+      </label>
+      <label for="option-cheese5" class="pure-checkbox">
+          <input id="option-cheese5" type="checkbox" name="optionsCheckboxes" [(ngModel)]="cheese.swiss">
+          swiss
+      </label>
+    </form>
+  </app-step>
+  <app-step title="Patty" [isValid]="patty">
+    <form class="pure-form">
+      <label for="option-patty-one" class="pure-radio">
+          <input id="option-patty-one" type="radio" name="bunRadios" value="Regular Beef" [(ngModel)]="patty">
+          Regular Beef
+      </label>
+      <label for="option-patty-two" class="pure-radio">
+          <input id="option-patty-two" type="radio" name="bunRadios" value="Veggie Patty" [(ngModel)]="patty">
+          Veggie Patty
+      </label>
+      <label for="option-patty-three" class="pure-radio">
+          <input id="option-patty-three" type="radio" name="bunRadios" value="Angus Beef" [(ngModel)]="patty">
+          Angus Beef
+      </label>
+    </form>
+  </app-step>
+  <app-step title="Mayo" disabled="true">
+    This is step 6 content
+  </app-step>
+  <app-step title="Summary">
+    <h3>Summary of Order</h3>
+    <h5>Bun</h5>
+    {{bunRadios}}
+    <h5>Dressing</h5>
+    {{dressing}}
+    <h5>Veggies</h5>
+    <ul>
+      <li *ngFor="let v of veggiesSelected()">{{v}}</li>
+    </ul>
+    <h5>Cheeses</h5>
+    <ul>
+      <li *ngFor="let v of cheesesSelected()">{{v}}</li>
+    </ul>
+    <h5>Patty</h5>
+    {{patty}}
+  </app-step>
+</app-stepping>
+<div class="message" [hidden]="!message">
+  {{message}}
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="http://angularjs.blogspot.com/">Angular blog</a></h2>
-  </li>
-</ul>
-

@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="steps">
+    <ul class="wizard">
+      <li *ngFor="let s of stepArr" [ngClass]="{'selected': s.active}">{{s.title}}</li>
+    </ul>
+  </div>
+  <div class="wizard-container">
+    <ng-content></ng-content>
+  </div>
+  <div class="wizard-footer">
+    <button type="button" class="pure-button previous" (click)="prev()" [disabled]="loading">Previous</button>
+    <button type="button" class="pure-button next" (click)="next()" *ngIf="currentIndex() !== (stepArr.length - 1)" [disabled]="currentNotValid() || loading">Next</button>
+    <button type="button" class="pure-button pure-button-primary finish" *ngIf="currentIndex() === (stepArr.length - 1)" (click)="finish()" [disabled]="loading">Finish</button>
+  </div>
+</div>

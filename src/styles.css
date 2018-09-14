@@ -1,1 +1,62 @@
-/* You can add global styles to this file, and also import other style files */
+.container {
+    width: 80%;
+    margin: auto;
+}
+.steps {
+    text-align: center;
+}
+.wizard li {
+    background-color: #E4E4E4;
+    border-radius: 5px;
+    display: inline;
+    padding: 10px 30px 10px 40px;
+    /* margin-right: -7px; */
+    margin-right: -4px;
+}
+
+.wizard li::before, .wizard li::after {
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    border-color: transparent;
+    border-left-color: #fff;
+    border-radius: 10px;
+}
+
+.wizard li::before {
+    /* border-width: 25px;  */
+    margin-top: -16px;
+    /*margin-left: 84px;*/
+    margin-left: 69px;
+
+}
+
+.wizard li::after {
+    border-left-color: #E4E4E4;
+    border-width: 21px; 
+    margin-top: -12px;
+    margin-left: 24px;
+}
+
+.wizard li.selected {
+    background-color: #b52e31;
+    color: #fff;
+}
+
+.wizard li.selected::after {
+    border-left-color: #b52e31;
+}
+
+.wizard li:last-child::after {
+    border-left-color: transparent;
+}
+
+.wizard-container, .wizard-footer {
+    padding: 15px;
+}
+
+.next, .finish {
+    float: right;
+}
